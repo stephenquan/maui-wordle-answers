@@ -34,9 +34,9 @@ namespace maui_wordle_answers.Pages
 
         public MainViewModel()
         {
-            YesterdayCommand = new Command(execute: async () => await FindSolution("Yesterday's wordle", -1));
-            TodayCommand = new Command(execute: async () => await FindSolution("Today's wordle", 0));
-            TomorrowCommand = new Command(execute: async () => await FindSolution("Tomorrow's wordle", 1));
+            YesterdayCommand = new Command(execute: async () => await Solve("Yesterday's wordle", -1));
+            TodayCommand = new Command(execute: async () => await Solve("Today's wordle", 0));
+            TomorrowCommand = new Command(execute: async () => await Solve("Tomorrow's wordle", 1));
             YesterdayCommand.Execute(this);
         }
 
@@ -49,7 +49,7 @@ namespace maui_wordle_answers.Pages
         public ICommand TodayCommand { private set; get; }
         public ICommand TomorrowCommand { private set; get; }
 
-        public async Task FindSolution(string title, int offset)
+        public async Task Solve(string title, int offset)
         {
             Title = title;
             var datestamp = DateTime.Today.AddDays(offset).ToString("yyyy-MM-dd");
