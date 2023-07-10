@@ -16,23 +16,24 @@
                    TextTransform="Uppercase"
                    FontSize="20"
                    FontAttributes="Bold"/>
-            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                <Button Text="Yesterday"
-                        Command="{Binding YesterdayCommand}"
-                        BackgroundColor="Grey"
-                        ContentLayout="Top,0"
-                        ImageSource="find_path.png"/>
-                <Button Text="Today"
-                        Command="{Binding TodayCommand}"
-                        BackgroundColor="Grey"
-                        ContentLayout="Top,0"
-                        ImageSource="find_path.png"/>
-                <Button Text="Tomorrow"
-                        Command="{Binding TomorrowCommand}"
-                        BackgroundColor="Grey"
-                        ContentLayout="Top,0"
-                        ImageSource="find_path.png"/>
-            </HorizontalStackLayout>
+            <Button HorizontalOptions="Center"
+                    Text="Yesterday"
+                    Command="{Binding YesterdayCommand}"
+                    BackgroundColor="Grey"
+                    ContentLayout="Top,0"
+                    ImageSource="find_path.png"/>
+            <Button HorizontalOptions="Center"
+                    Text="Today"
+                    Command="{Binding TodayCommand}"
+                    BackgroundColor="Grey"
+                    ContentLayout="Top,0"
+                    ImageSource="find_path.png"/>
+            <Button HorizontalOptions="Center"
+                    Text="Tomorrow"
+                    Command="{Binding TomorrowCommand}"
+                    BackgroundColor="Grey"
+                    ContentLayout="Top,0"
+                    ImageSource="find_path.png"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
