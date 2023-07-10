@@ -7,7 +7,7 @@
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Home"
+        Title="Wordle Solver"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

@@ -1,6 +1,5 @@
 ﻿using maui_wordle_answers.ViewModels;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Text.Json;
 using System.Windows.Input;
 
@@ -34,9 +33,9 @@ namespace maui_wordle_answers.Pages
 
         public MainViewModel()
         {
-            YesterdayCommand = new Command(execute: async () => await Solve("Yesterday's wordle", -1));
-            TodayCommand = new Command(execute: async () => await Solve("Today's wordle", 0));
-            TomorrowCommand = new Command(execute: async () => await Solve("Tomorrow's wordle", 1));
+            YesterdayCommand = new Command(execute: async () => await Solve("Yesterday's Wordle was:", -1));
+            TodayCommand = new Command(execute: async () => await Solve("Today's Wordle is:", 0));
+            TomorrowCommand = new Command(execute: async () => await Solve("Tomorrow's Wordle prediction:", 1));
             YesterdayCommand.Execute(this);
         }
 
