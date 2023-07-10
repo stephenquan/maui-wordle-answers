@@ -8,15 +8,30 @@
     </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
-            <Label HorizontalOptions="Center" Text="{Binding Title}"/>
+            <Label HorizontalOptions="Center"
+                   Text="{Binding Title}"
+                   FontSize="14"/>
             <Label HorizontalOptions="Center"
                    Text="{Binding Solution.Solution}"
                    TextTransform="Uppercase"
-                   FontSize="20"/>
+                   FontSize="20"
+                   FontAttributes="Bold"/>
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
-                <Button Text="Yesterday" Command="{Binding YesterdayCommand}"/>
-                <Button Text="Today" Command="{Binding TodayCommand}"/>
-                <Button Text="Tomorrow" Command="{Binding TomorrowCommand}"/>
+                <Button Text="Yesterday"
+                        Command="{Binding YesterdayCommand}"
+                        BackgroundColor="Grey"
+                        ContentLayout="Top,0"
+                        ImageSource="find_path.png"/>
+                <Button Text="Today"
+                        Command="{Binding TodayCommand}"
+                        BackgroundColor="Grey"
+                        ContentLayout="Top,0"
+                        ImageSource="find_path.png"/>
+                <Button Text="Tomorrow"
+                        Command="{Binding TomorrowCommand}"
+                        BackgroundColor="Grey"
+                        ContentLayout="Top,0"
+                        ImageSource="find_path.png"/>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
