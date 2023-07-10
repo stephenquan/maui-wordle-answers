@@ -7,8 +7,6 @@ namespace maui_wordle_answers.Pages
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private Dictionary<string, string> cache = new Dictionary<string, string>();
-
         private string title;
         public string Title
         {
@@ -54,19 +52,10 @@ namespace maui_wordle_answers.Pages
         {
             Title = title;
             var datestamp = DateTime.Today.AddDays(offset).ToString("yyyy-MM-dd");
-            string json;
-            if (cache.ContainsKey(datestamp))
-            {
-                json = cache.GetValueOrDefault(datestamp);
-            }
-            else
-            {
-                var url = $"https://www.nytimes.com/svc/wordle/v2/{datestamp}.json";
-                Solution = null;
-                await Task.Delay(200);
-                json = await new HttpClient().GetStringAsync(url);
-                cache.Add(datestamp, json);
-            }
+            var url = $"https://www.nytimes.com/svc/wordle/v2/{datestamp}.json";
+            Solution = null;
+            await Task.Delay(200);
+            var json = await new HttpClient().GetStringAsync(url);
             LoadFromText(json);
         }
 
