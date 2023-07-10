@@ -54,7 +54,7 @@ namespace maui_wordle_answers.Pages
         {
             Title = title;
             var datestamp = DateTime.Today.AddDays(offset).ToString("yyyy-MM-dd");
-            string json = "";
+            string json;
             if (cache.ContainsKey(datestamp))
             {
                 json = cache.GetValueOrDefault(datestamp);
