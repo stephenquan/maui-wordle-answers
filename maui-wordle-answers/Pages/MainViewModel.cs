@@ -52,10 +52,10 @@ namespace maui_wordle_answers.Pages
         public async Task FindSolution(string title, int offset)
         {
             Title = title;
-            var day = DateTime.Today.AddDays(offset);
-            var stamp = day.ToString("yyyy-MM-dd");
-            var url =  $"https://www.nytimes.com/svc/wordle/v2/{stamp}.json";
+            var datestamp = DateTime.Today.AddDays(offset).ToString("yyyy-MM-dd");
+            var url =  $"https://www.nytimes.com/svc/wordle/v2/{datestamp}.json";
             Solution = null;
+            await Task.Delay(200);
             var json = await new HttpClient().GetStringAsync(url);
             LoadFromText(json);
         }
