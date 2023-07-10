@@ -8,7 +8,7 @@ namespace maui_wordle_answers.Pages
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private string title = "Yesterday's Wordle";
+        private string title;
         public string Title
         {
             get => title;
