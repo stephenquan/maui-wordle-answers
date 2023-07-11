@@ -2,35 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="maui_wordle_answers.MainPage"
-             xmlns:local="clr-namespace:maui_wordle_answers.Pages">
+             xmlns:local="clr-namespace:maui_wordle_answers.Pages"
+             BackgroundColor="Black">
     <ContentPage.BindingContext>
         <local:MainViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="ImageSource" Value="find_path.png"/>
+            <Setter Property="TextColor" Value="Purple"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+        </Style>
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
             <Label HorizontalOptions="Center"
                    Text="{Binding Title}"
-                   FontSize="14"/>
+                   FontSize="14"
+                   Style="{StaticResource labelStyle}"/>
             <Label HorizontalOptions="Center"
                    Text="{Binding Solution.Solution}"
                    TextTransform="Uppercase"
                    FontSize="20"
-                   FontAttributes="Bold"/>
-            <HorizontalStackLayout HorizontalOptions="Center"
-                                   Spacing="10">
-                <Button HorizontalOptions="Center"
-                        Text="Yesterday"
-                        Command="{Binding YesterdayCommand}"
-                        ImageSource="find_path.png"/>
-                <Button HorizontalOptions="Center"
-                        Text="Today"
-                        Command="{Binding TodayCommand}"
-                        ImageSource="find_path.png"/>
+                   FontAttributes="Bold"
+                   Style="{StaticResource labelStyle}"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="Yesterday" Command="{Binding YesterdayCommand}" Style="{StaticResource buttonStyle}"/>
+                <Button Text="Today" Command="{Binding TodayCommand}" Style="{StaticResource buttonStyle}"/>
             </HorizontalStackLayout>
-            <Button HorizontalOptions="Center"
-                    Text="Tomorrow"
-                    Command="{Binding TomorrowCommand}"
-                    ImageSource="find_path.png"/>
+            <Button HorizontalOptions="Center" Text="Tomorrow" Command="{Binding TomorrowCommand}" Style="{StaticResource buttonStyle}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
